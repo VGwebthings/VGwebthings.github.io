@@ -1,0 +1,10 @@
+---
+title: Hello
+layout: default
+---
+{% for page in site.posts limit: 4 %}
+    <article class="">
+        <h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
+        {{ page.excerpt | markdownify | truncatewords: 60 }}
+    </article>
+{% endfor %}
