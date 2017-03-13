@@ -3,7 +3,22 @@ layout: default
 ---
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](another-page).
+```php
+use Timber\Menu;
+use Timber\Post;
+use Timber\Timber;
+
+$context         = Timber::get_context();
+$post            = new Post();
+$context['post'] = $post;
+$menu            = get_field('sidebar_menu');
+if ($menu) {
+    $context['menuSidebar'] = new Menu($menu);
+}
+Timber::render(['page-' . $post->post_name . '.twig', 'page.twig'], $context);
+```
+
+[Link to another page](about).
 
 There should be whitespace between paragraphs.
 
