@@ -4,7 +4,6 @@ layout: default
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 ```php
-
 <?php
 use Timber\Menu;
 use Timber\Post;
@@ -18,12 +17,11 @@ if ($menu) {
     $context['menuSidebar'] = new Menu($menu);
 }
 Timber::render(['page-' . $post->post_name . '.twig', 'page.twig'], $context);
-
 ```
 
-[Link to another page](about).
+<span class="lnr lnr-database"></span> [Link to another page](about).
 
-<span class="lnr lnr-database"></span> There should be whitespace between paragraphs.
+There should be whitespace between paragraphs.
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
