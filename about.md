@@ -4,6 +4,8 @@ layout: default
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 ```php
+
+<?php
 use Timber\Menu;
 use Timber\Post;
 use Timber\Timber;
@@ -16,6 +18,7 @@ if ($menu) {
     $context['menuSidebar'] = new Menu($menu);
 }
 Timber::render(['page-' . $post->post_name . '.twig', 'page.twig'], $context);
+
 ```
 
 [Link to another page](about).
