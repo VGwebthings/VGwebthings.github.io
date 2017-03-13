@@ -23,7 +23,7 @@ Timber::render(['page-' . $post->post_name . '.twig', 'page.twig'], $context);
 
 [Link to another page](about).
 
-There should be whitespace between paragraphs.
+<span class="lnr lnr-database"></span> There should be whitespace between paragraphs.
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
