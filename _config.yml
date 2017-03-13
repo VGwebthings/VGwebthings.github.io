@@ -1,3 +1,5 @@
 description: VG web things on GitHub Pages.
 timezone: Europe/Athens
 title: VG web things
+gems:
+  - jekyll-seo-tag
