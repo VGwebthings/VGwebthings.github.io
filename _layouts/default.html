@@ -5,17 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="generator" content="Jekyll v{{ jekyll.version }}">
     <title>{{ site.title }}</title>
-    <!--<link rel="stylesheet" href="//cdn.linearicons.com/free/1.0.0/icon-font.min.css">-->
+    <link rel="stylesheet" href="//cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% seo %}
 </head>
 <body>
 <div id="container">
     <div class="inner">
-        <header></header>
+        <header>
+            <div class="header__logo">{{ site.title }}<span>.</span></div>
+            {% include navigation.html %}
+            <div class="header__menu"></div>
+        </header>
         <section id="main_content">{{ content }}</section>
-        <footer></footer>
+        <footer>
+            <div class="container">
+                <ul>
+                    {% for link in site.data.footer.leftLinks %}
+                        <li>
+                            <a href="{% link.link %}">{{ link.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <ul>
+                    {% for link in site.data.footer.rightLinks %}
+                        <li>
+                            <a href="{% link.link %}">{{ link.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </footer>
     </div>
 </div>
+{% include analytics.html %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!--<script src="{{ site.baseurl }}/assets/js/app.js"></script>-->
 </body>
 </html>
