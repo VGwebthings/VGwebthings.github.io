@@ -4,10 +4,12 @@ description: VG web things on GitHub Pages.
 paginate: 10
 permalink: pretty
 timezone: Europe/Athens
+sass:
+  style: compressed
 
 collections:
   snippets:
-    output: false
+    output: true
 
 jekyll-archives:
   enabled:
@@ -17,8 +19,8 @@ jekyll-archives:
 gems:
   - jekyll-archives
   - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-sitemap
+  #- jekyll-seo-tag
+  #- jekyll-sitemap
 
 exclude:
   - Gemfile

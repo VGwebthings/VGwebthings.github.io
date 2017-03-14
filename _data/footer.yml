@@ -1,7 +1,7 @@
 leftLinks:
   - name: Home
     link: /
-rightRinks:
+rightLinks:
   - name: Blog
     link: /blog/
   - name: About
