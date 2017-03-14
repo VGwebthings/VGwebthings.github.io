@@ -7,7 +7,7 @@ timezone: Europe/Athens
 
 collections:
   snippets:
-    output: true
+    output: false
 
 jekyll-archives:
   enabled:
@@ -19,3 +19,8 @@ gems:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
