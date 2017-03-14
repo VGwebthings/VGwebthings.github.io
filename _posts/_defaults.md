@@ -1,7 +1,7 @@
 ---
-title:
+categories:
 date:
 description:
-categories:
 image:
+title:
 ---

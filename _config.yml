@@ -1,7 +1,13 @@
+title: VG web things
 description: VG web things on GitHub Pages.
+
 permalink: pretty
 timezone: Europe/Athens
-title: VG web things
+
+collections:
+  snippets:
+    output: true
+
 gems:
   - jekyll-seo-tag
   - jekyll-sitemap

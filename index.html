@@ -1,10 +1,16 @@
 ---
-title: Hello
 layout: default
+title: Hello
 ---
-{% for page in site.posts limit: 4 %}
-    <article class="">
-        <h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
-        {{ page.excerpt | markdownify | truncatewords: 60 }}
-    </article>
+{% for post in site.posts limit: 4 %}
+<article class="">
+    <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+    {{ post.excerpt | markdownify | truncatewords: 60 }}
+</article>
+{% endfor %}
+<hr>
+{% for snippet in site.snippets limit: 4 %}
+<article class="">
+    <h2><a href="{{ snippet.url }}" title="{{ snippet.title }}">{{ snippet.title }}</a></h2>
+</article>
 {% endfor %}

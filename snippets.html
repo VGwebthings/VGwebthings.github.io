@@ -1,0 +1,10 @@
+---
+title: Snippets
+layout: default
+---
+{% for snippet in site.snippets %}
+<article class="">
+    <h2><a href="{{ snippet.url }}" title="{{ snippet.title }}">{{ snippet.title }}</a></h2>
+    {{ snippet.content }}
+</article>
+{% endfor %}
