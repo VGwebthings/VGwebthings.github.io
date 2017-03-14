@@ -23,14 +23,14 @@
                 <ul>
                     {% for link in site.data.footer.leftLinks %}
                         <li>
-                            <a href="{% link.link %}">{{ link.name }}</a>
+                            <a href="{{ link.link }}">{{ link.name }}</a>
                         </li>
                     {% endfor %}
                 </ul>
                 <ul>
                     {% for link in site.data.footer.rightLinks %}
                         <li>
-                            <a href="{% link.link %}">{{ link.name }}</a>
+                            <a href="{{ link.link }}">{{ link.name }}</a>
                         </li>
                     {% endfor %}
                 </ul>

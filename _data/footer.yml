@@ -1,9 +1,5 @@
 leftLinks:
-  - name:
-    link: /
-  - name:
-    link: /
-  - name:
+  - name: Home
     link: /
 rightRinks:
   - name: Blog
