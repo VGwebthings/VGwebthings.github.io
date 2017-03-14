@@ -1,6 +1,7 @@
 title: VG web things
 description: VG web things on GitHub Pages.
 
+paginate: 10
 permalink: pretty
 timezone: Europe/Athens
 
@@ -8,6 +9,13 @@ collections:
   snippets:
     output: true
 
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+
 gems:
+  - jekyll-archives
+  - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
