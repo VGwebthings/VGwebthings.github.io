@@ -16,6 +16,13 @@ jekyll-archives:
     - categories
     - tags
 
+prose:
+  media: 'media'
+  ignore:
+    - /_includes
+    - /_layouts
+    - _config.yml
+
 gems:
   #- jekyll-archives
   - jekyll-paginate
