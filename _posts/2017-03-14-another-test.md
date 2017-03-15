@@ -1,6 +1,3 @@
----
-layout: default
----
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 ```php
@@ -136,6 +133,3 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
-## About page
-_yay_
-[back](./)

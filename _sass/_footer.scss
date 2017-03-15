@@ -1,0 +1,27 @@
+.footer {
+  background-color: $black;
+  bottom: 0;
+  left: 0;
+  padding: 5em 0;
+  position: relative;
+  right: 0;
+  z-index: 2;
+  .container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+  }
+  ul {
+  }
+}
+
+.footer__left {
+  align-items: flex-end;
+  display: flex;
+  width: 50%;
+}
+
+.footer__right {
+  display: flex;
+  width: 50%;
+}

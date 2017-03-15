@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="generator" content="Jekyll v{{ jekyll.version }}">
-    <title>{{ site.title }}</title>
+    <!--<meta name="generator" content="Jekyll v{{ jekyll.version }}">-->
+    <!--<title>{{ site.title }}</title>-->
     <!--<link rel="stylesheet" href="//cdn.linearicons.com/free/1.0.0/icon-font.min.css">-->
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision }}">
-    {% comment %}{% seo %}{% endcomment %}
+    {% seo %}
 </head>
 <body>
 <div id="app">
@@ -19,27 +19,38 @@
         {% include navigation.html %}
         <div class="header__menu"></div>
     </header>
-    <section id="content">{{ content }}</section>
+    {{ content }}
     <footer class="footer">
         <div class="container">
-            <ul>
-                {% for link in site.data.footer.leftLinks %}
-                    <li>
-                        <a href="{{ link.link }}">{{ link.name }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for link in site.data.footer.rightLinks %}
-                    <li>
-                        <a href="{{ link.link }}">{{ link.name }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
+            <div class="footer__left">
+                <span>{{ site.title }}</span>
+            </div>
+            <div class="footer__right">
+                <div class="half">
+                    <ul>
+                        {% for link in site.data.footer.leftLinks %}
+                            <li>
+                                <a href="{{ link.link }}">{{ link.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="half">
+                    <ul>
+                        {% for link in site.data.footer.rightLinks %}
+                            <li>
+                                <a href="{{ link.link }}">{{ link.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.6/SmoothScroll.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/1.0.0/lunr.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/app.js?v={{ site.github.build_revision }}"></script>
 </body>

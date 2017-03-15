@@ -1,7 +1,7 @@
 ---
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar ipsum eu blandit sagittis.
 layout: default
-title: Blog
+title: Contact
 ---
 <section class="hero" style="background-image:url('https://source.unsplash.com/category/nature/1600x900');">
     <div class="container">
@@ -9,11 +9,4 @@ title: Blog
         <p class="hero__subtitle">{{ page.description }}</p>
     </div>
 </section>
-<section id="content">
-    {% for post in site.posts %}
-    <article class="">
-        <h3><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
-        {% comment %}{{ post.excerpt }}{% endcomment %}
-    </article>
-    {% endfor %}
-</section>
+<section id="content"></section>

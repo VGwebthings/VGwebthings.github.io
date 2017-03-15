@@ -1,0 +1,60 @@
+.header {
+  //background: $lightWhite;
+  align-items: baseline;
+  display: flex;
+  left: 0;
+  padding: 1.5em 2em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  > nav {
+    margin-left: auto;
+  }
+}
+
+.header__logo {
+  color: $lightWhite;
+  font-family: 'MuseoSans-900', sans-serif;
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1;
+  .dot {
+    color: #456CEB;
+  }
+}
+
+.header__menu {
+
+}
+
+.menu {
+  align-items: center;
+  background-color: $lightBlack;
+  bottom: 0;
+  display: flex;
+  font-size: 1.85em;
+  left: 0;
+  opacity: 0;
+  padding: 5em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  &.is-showing {
+    opacity: 1;
+    visibility: visible;
+  }
+  a {
+    color: $lightWhite;
+    &:hover {
+      color: $lightRed;
+    }
+  }
+}
+
+.menu__close {
+  position: absolute;
+}

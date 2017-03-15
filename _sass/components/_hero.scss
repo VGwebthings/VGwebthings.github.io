@@ -1,0 +1,29 @@
+.hero {
+  -webkit-filter: grayscale(1);
+  align-items: flex-end;
+  background-color: $white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  color: $lightWhite;
+  display: flex;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  .container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-bottom: 5em;
+    width: 100%;
+    > * {
+      max-width: 45%;
+    }
+  }
+}
+
+.hero__title {
+}

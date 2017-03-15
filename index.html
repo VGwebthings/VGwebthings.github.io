@@ -2,15 +2,26 @@
 layout: default
 title: Hello
 ---
-{% for post in site.posts limit: 4 %}
-<article class="">
-    <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-    {{ post.excerpt | markdownify | truncatewords: 60 }}
-</article>
-{% endfor %}
-<hr>
-{% for snippet in site.snippets limit: 4 %}
-<article class="">
-    <h2><a href="{{ snippet.url }}" title="{{ snippet.title }}">{{ snippet.title }}</a></h2>
-</article>
-{% endfor %}
+<section class="hero" style="background-image:url('https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png');">
+    <div class="container">
+        <h1>Latest updates</h1>
+        {% for post in site.posts limit: 3 %}
+        <article class="">
+            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+<section id="content">
+    {% for post in site.posts limit: 4 %}
+    <article class="">
+        <h5><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h5>
+        {% comment %}{{ post.excerpt | markdownify | truncatewords: 60 }}{% endcomment %}
+    </article>
+    {% endfor %}
+    {% for snippet in site.snippets limit: 4 %}
+    <article class="">
+        <h5><a href="{{ snippet.url }}" title="{{ snippet.title }}">{{ snippet.title }}</a></h5>
+    </article>
+    {% endfor %}
+</section>

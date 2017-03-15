@@ -29,4 +29,12 @@
 //        }, 500);
 //    });
 //})();
-$("body").css("opacity", "1");
+var loadScripts = function () {
+    var footer = $('footer');
+    $('body').css('opacity', '1');
+    //$('#content').css('margin-bottom', footer.outerHeight());
+};
+window.addEventListener('load', loadScripts);
+$('.masonry').masonry({
+    itemSelector: 'article'
+});

@@ -1,7 +1,7 @@
 title: VG web things
 description: VG web things on GitHub Pages.
 
-paginate: 10
+paginate: 50
 permalink: pretty
 timezone: Europe/Athens
 sass:
@@ -17,10 +17,10 @@ jekyll-archives:
     - tags
 
 gems:
-  - jekyll-archives
+  #- jekyll-archives
   - jekyll-paginate
-  #- jekyll-seo-tag
-  #- jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
   - Gemfile
