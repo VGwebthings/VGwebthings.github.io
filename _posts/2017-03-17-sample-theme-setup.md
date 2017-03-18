@@ -1,11 +1,18 @@
 ---
 layout: post
 title: Theme Setup
-description: "Instructions on how to install and customize the Jekyll theme So Simple."
-tags: [Jekyll, theme, install, setup]
+description: Instructions on how to install and customize the Jekyll theme So Simple.
+tags:
+  - Jekyll
+  - theme
+  - install
+  - setup
+published: true
 ---
 
 General notes and suggestions for customizing **So Simple Theme**.
+
+![20130916003602.png]({{site.baseurl}}/media/20130916003602.png)
 
 ## Basic Setup
 
