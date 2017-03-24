@@ -2,8 +2,8 @@
   align-items: baseline;
   display: flex;
   left: 0;
-  padding: 1.5em 2em;
-  position: fixed;
+  padding: 1.5em 2em 2em 2em;
+  position: absolute;
   right: 0;
   top: 0;
   z-index: 10;
@@ -24,8 +24,9 @@
 .header__search-icon {
   cursor: pointer;
   height: 15px;
-  margin-left: auto;
-  position: relative;
+  position: fixed;
+  right: 2em;
+  top: 1.5em;
   width: 25px;
   &:before {
     background-color: $lightWhite;

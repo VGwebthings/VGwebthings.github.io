@@ -105,26 +105,26 @@
 }
 
 code, pre {
-  //margin-bottom: 30px;
+  margin-bottom: 5em;
   font-family: Courier, Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 16px;
 }
 
 code {
   padding: 0 5px;
-  background-color: $lightWhite;
 }
 
 pre {
-  padding: 20px;
+  //border-radius: 3px;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 25px #fafafa;
+  color: $lightBlack;
   overflow: auto;
-  color: $white;
-  background: $lightBlack;
+  padding: 3rem;
 }
 
 pre code {
   padding: 0;
-  color: $white;
-  background-color: $lightBlack;
+  color: $lightBlack;
   border: none;
 }

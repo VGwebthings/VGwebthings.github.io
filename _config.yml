@@ -1,7 +1,7 @@
 title: VG web things
 description: VG web things on GitHub.
 
-permalink: pretty
+permalink: /:title/
 timezone: Europe/Athens
 sass:
   style: compressed

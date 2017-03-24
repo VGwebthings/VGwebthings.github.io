@@ -27,7 +27,7 @@
     width: 100%;
     z-index: 1;
     > * {
-      max-width: 60%;
+      max-width: 80%;
     }
   }
   &.hero--error {
@@ -41,4 +41,8 @@
       padding: 5em;
     }
   }
+}
+
+.hero__title {
+  font-weight: 800;
 }
