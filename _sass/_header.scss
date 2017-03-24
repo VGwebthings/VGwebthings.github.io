@@ -1,5 +1,4 @@
 .header {
-  //background: $lightWhite;
   align-items: baseline;
   display: flex;
   left: 0;
@@ -8,17 +7,13 @@
   right: 0;
   top: 0;
   z-index: 10;
-  > nav {
-    margin-left: auto;
-  }
 }
 
 .header__logo {
   color: $lightWhite;
-  font-family: 'MuseoSans-900', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
-  font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -2px;
   line-height: 1;
   .dot {
@@ -26,35 +21,39 @@
   }
 }
 
-.header__menu {
-
-}
-
-.menu {
-  align-items: center;
-  background-color: $lightBlack;
-  bottom: 0;
-  display: flex;
-  font-size: 1.85em;
-  left: 0;
-  opacity: 0;
-  padding: 5em;
-  position: fixed;
-  right: 0;
-  top: 0;
-  visibility: hidden;
-  &.is-showing {
-    opacity: 1;
-    visibility: visible;
+.header__search-icon {
+  cursor: pointer;
+  height: 15px;
+  margin-left: auto;
+  position: relative;
+  width: 25px;
+  &:before {
+    background-color: $lightWhite;
+    content: '';
+    height: 5px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .25s;
+    width: 100%;
   }
-  a {
-    color: $lightWhite;
-    &:hover {
-      color: $lightRed;
+  &:after {
+    background-color: $lightWhite;
+    bottom: 0;
+    content: '';
+    height: 5px;
+    left: 0;
+    position: absolute;
+    transition: all .25s;
+    width: 50%;
+  }
+  &:hover {
+    &:before {
+      background-color: $blue;
+    }
+    &:after {
+      background-color: $blue;
+      width: 100%;
     }
   }
-}
-
-.menu__close {
-  position: absolute;
 }

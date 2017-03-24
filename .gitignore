@@ -1,5 +1,5 @@
 .idea/
-.jekyll-metadata
+.jekyll-metadata/
 .vscode/
 _site/
 node_modules/

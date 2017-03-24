@@ -1,5 +1,4 @@
 ---
-layout: post
 ---
 ```js
 console.log('--- _scroll.js');

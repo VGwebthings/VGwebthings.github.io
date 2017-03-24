@@ -1,7 +1,6 @@
 title: VG web things
-description: VG web things on GitHub Pages.
+description: VG web things on GitHub.
 
-paginate: 50
 permalink: pretty
 timezone: Europe/Athens
 sass:
@@ -11,10 +10,23 @@ collections:
   snippets:
     output: true
 
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
+defaults:
+  - scope:
+        path: ""
+        type: "pages"
+    values:
+        layout: "default"
+  - scope:
+        path: ""
+        type: "pages"
+    values:
+        layout: "default"
+  - scope:
+        path: ""
+        type: "snippets"
+    values:
+        layout: "snippet"
+        categories: []
 
 prose:
   media: 'media'
@@ -24,12 +36,8 @@ prose:
     - _config.yml
 
 gems:
-  #- jekyll-archives
-  - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-sitemap
 
 exclude:
   - Gemfile
   - Gemfile.lock
-  - README.md

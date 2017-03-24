@@ -2,16 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 800px;
-  padding: 250px 0;
+  //max-width: 800px;
+}
+
+.tease--snippet {
+  padding: 2em;
 }
 
 .snippet {
-  background-color: $lightWhite;
-  margin-bottom: 2em;
-  padding: 1.5em;
-  width: 31%;
-  &:nth-child(4) {
-    background-color: $black;
-  }
 }

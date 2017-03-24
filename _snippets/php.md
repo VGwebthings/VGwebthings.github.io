@@ -1,5 +1,4 @@
 ---
-layout: post
 ---
 ```php
 <?php
@@ -16,7 +15,6 @@ class TheSite extends Site
     }
 }
 ```
-This goes there
 ```php
 <?php
 use Timber\Loader;
