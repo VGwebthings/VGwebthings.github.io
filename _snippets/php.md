@@ -15,6 +15,12 @@ class TheSite extends Site
     }
 }
 ```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis est at turpis viverra tempus vel id augue.
+
+### Fusce in mauris et magna elementum blandit at.
+
+Donec placerat magna fringilla dignissim eleifend. Vestibulum at mollis nunc, vel mollis purus. Nulla dolor mi, aliquam ac elit a, vehicula sodales nibh. Nullam a arcu at lectus viverra fringilla eu ac velit. Fusce tincidunt orci quam, nec pellentesque ligula pellentesque in. Morbi dui nunc, elementum a porta vel, lacinia sit amet sapien. Donec eu blandit enim. Mauris malesuada tincidunt sapien, aliquet maximus nisi molestie eu. Cras ultricies tellus neque, nec auctor turpis lacinia non. Proin condimentum nisl at diam semper porttitor. Maecenas finibus massa tellus, a sodales est accumsan eget.
+
 ```php
 <?php
 use Timber\Loader;

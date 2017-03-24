@@ -1,6 +1,6 @@
 .hero {
   align-items: flex-end;
-  background-color: $white;
+  background-color: $black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,7 +27,7 @@
     width: 100%;
     z-index: 1;
     > * {
-      max-width: 80%;
+      //max-width: 80%;
     }
   }
   &.hero--error {

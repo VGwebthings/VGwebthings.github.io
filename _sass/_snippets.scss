@@ -2,12 +2,42 @@
   //display: flex;
   //flex-wrap: wrap;
   //justify-content: space-between;
-  //max-width: 800px;
+  max-width: 1024px !important;
 }
 
 .tease--snippet {
-  padding: 2em 0;
+  border: 1px solid $lightWhite;
+  box-shadow: 10px 10px 0 $lightWhite;
+  margin-bottom: 2em;
+  padding: 2em;
+  transition: all .25s;
+  &:hover {
+    border: 1px solid $blue;
+    box-shadow: 10px 10px 0 $blue;
+    a {
+      color: $blue;
+    }
+  }
 }
 
 .snippet {
+}
+
+.scroll-icon {
+  background-color: $lightWhite;
+  bottom: 2em;
+  cursor: pointer;
+  height: 25px;
+  position: fixed;
+  right: 2em;
+  transition: all .15s;
+  width: 25px;
+  z-index: 3;
+  &:hover {
+    background-color: $blue;
+    border-radius: 50%;
+  }
+  &:active {
+    background-color: $lightBlue;
+  }
 }

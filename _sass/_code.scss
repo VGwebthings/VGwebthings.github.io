@@ -110,17 +110,34 @@ code, pre {
   font-size: 16px;
 }
 
+.highlighter-rouge {
+  margin-left: -100px;
+  margin-right: -100px;
+  &:last-child {
+    code, pre {
+      margin-bottom: 0;
+    }
+  }
+}
+
 code {
   padding: 0 5px;
 }
 
 pre {
   //border-radius: 3px;
-  border: 1px solid #eee;
-  box-shadow: 0 10px 25px #fafafa;
+  //border: 1px solid #eee;
+  //box-shadow: 0 10px 25px #fafafa;
+  border: 1px solid $lightWhite;
+  box-shadow: 10px 10px 0 $lightWhite;
   color: $lightBlack;
   overflow: auto;
   padding: 3rem;
+  transition: all .25s;
+  &:hover {
+    border: 1px solid $white;
+    box-shadow: 10px 10px 0 $white;
+  }
 }
 
 pre code {
