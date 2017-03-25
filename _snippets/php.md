@@ -1,5 +1,18 @@
 ---
+tags: sample
 ---
+### Will return the current date + time
+```php
+<?php
+function get_time()
+{
+    $timestamp = time();
+    $date      = date("d.m.Y", $timestamp);
+    $time      = date("H:i");
+
+    return "{$date} - {$time}";
+}
+```
 ```php
 <?php
 class TheSite extends Site

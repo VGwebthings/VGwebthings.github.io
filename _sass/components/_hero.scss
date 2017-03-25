@@ -31,7 +31,7 @@
     }
   }
   &.hero--error {
-    background-color: $lightBlue;
+    background-color: $blue;
     height: 100vh;
     &:before {
       content: none;
@@ -39,6 +39,9 @@
     .container {
       max-width: none;
       padding: 5em;
+    }
+    .hero__title {
+      color: yellow;
     }
   }
 }

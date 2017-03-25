@@ -38,16 +38,18 @@ var loadScripts = function () {
             scrollTop: $(this.hash).offset().top
         }, 500);
     });
-    $(window).scroll(function () {
-        didScroll = true;
-    });
-    setInterval(function () {
-        if (didScroll) {
-            didScroll = false;
-            changeHeader();
-        }
-    }, 100);
-    changeHeader();
+    if (header) {
+        $(window).scroll(function () {
+            didScroll = true;
+        });
+        setInterval(function () {
+            if (didScroll) {
+                didScroll = false;
+                changeHeader();
+            }
+        }, 100);
+        changeHeader();
+    }
     //new Clipboard('.btn');
     // $('#search-query').lunr({
     //     indexUrl: '/search.json',
