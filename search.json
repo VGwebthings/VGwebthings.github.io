@@ -1,15 +1,14 @@
 ---
-layout: nil
+layout: null
 ---
 [
-  {% for post in site.snippets %}
+  {% for snippet in site.snippets %}
   {
-    "content": {{ post.content | strip_html | strip_newlines | jsonify }},
-    "date": "{{ post.date }}",
-    "description" : "{{ post.description | escape }}",
-    "tags": "{{ post.tags | join: ', ' }}",
-    "title": "{{ post.title | escape }}",
-    "url": "{{ site.url }}{{ post.url }}"
+    "content": {{ snippet.content | strip_html | strip_newlines | jsonify }},
+    "description" : "{{ snippet.description | escape }}",
+    "tags": "{{ snippet.tags | join: ', ' }}",
+    "title": "{{ snippet.title | escape }}",
+    "url": "{{ site.url }}{{ snippet.url }}"
   }
   {% unless forloop.last %},{% endunless %}
   {% endfor %}

@@ -117,12 +117,29 @@
     visibility: visible;
   }
   .container {
-    align-items: flex-end;
-    //border-bottom: 2px solid $black;
-    display: flex;
-    height: 40vh;
-    padding: 2.5em 5em 2.1em 5em;
   }
+}
+
+.search__top {
+  align-items: flex-end;
+  display: flex;
+  height: 40vh;
+  padding: 2.5em 5em 2.1em 5em;
+}
+
+.search__bottom {
+  padding: 0 5em;
+}
+
+.search__results {
+
+}
+
+.search__result {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .search {

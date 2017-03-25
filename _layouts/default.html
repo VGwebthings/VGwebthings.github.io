@@ -28,7 +28,14 @@ layout: compress
                     </div>
                 </div>
                 <div class="search__bottom">
-                    <div id="search__results"></div>
+                    <ol id="search__results"></ol>
+                    {% raw %}
+                    <script id="search-result-template" type="text/x-handlebars-template">
+                        <div class="search__result">
+                            <a href="{{url}}">{{{ title }}}</a>
+                        </div>
+                    </script>
+                    {% endraw %}
                 </div>
             </div>
         </div>
@@ -42,7 +49,6 @@ layout: compress
 <script src="//cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.6/SmoothScroll.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/1.0.0/lunr.min.js"></script>
-<!--<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>-->
 <script src="/assets/js/app.js?v={{ site.github.build_revision }}"></script>
 </body>
 </html>
