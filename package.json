@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "jquery": "^3.2.1",
+    "lunr": "^1.0.0",
+    "smoothscroll-for-websites": "^1.4.6"
+  }
+}

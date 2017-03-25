@@ -1,3 +1,6 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +9,14 @@
     {% comment %}<title>{{ site.title }}</title>{% endcomment %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision }}">
     {% seo %}
+    {% if jekyll.environment == "production" %}{% include analytics.html %}{% endif %}
 </head>
-<body>
+<body class="layout-{{ page.layout }}">
 <div id="app">
-    <header class="header">
+    <header id="header" class="header">
         <div class="header__logo">
-            <span>{{ site.title }}</span>
+            <span class="vg">VG</span>
+            <span class="wt">web things</span>
             <span class="dot">.</span>
         </div>
         <div class="header__search-icon"></div>
@@ -24,9 +29,10 @@
         </div>
     </header>
     {{ content }}
-    {% comment %}
-    <footer class="footer"></footer>
-    {% endcomment %}
+    <footer class="footer">
+        <a href="{{ site.url }}" class="footer__home"></a>
+        <a href="#header" class="footer__scroll"></a>
+    </footer>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.6/SmoothScroll.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

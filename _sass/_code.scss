@@ -111,8 +111,20 @@ code, pre {
 }
 
 .highlighter-rouge {
-  margin-left: -100px;
-  margin-right: -100px;
+  //margin-left: -100px;
+  //margin-right: -100px;
+  position: relative;
+  &:after {
+    bottom: 0.5em;
+    color: $lightWhite;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    position: absolute;
+    right: 0.5em;
+  }
   &:last-child {
     code, pre {
       margin-bottom: 0;
@@ -144,4 +156,34 @@ pre code {
   padding: 0;
   color: $lightBlack;
   border: none;
+}
+
+.language-php {
+  &:after {
+    content: '>_ php';
+  }
+}
+
+.language-js {
+  &:after {
+    content: '>_ javascript';
+  }
+}
+
+.language-css {
+  &:after {
+    content: '>_ css';
+  }
+}
+
+.language-twig {
+  &:after {
+    content: '>_ twig';
+  }
+}
+
+.language-html {
+  &:after {
+    content: '>_ html';
+  }
 }

@@ -9,6 +9,18 @@ layout: default
 <section id="content">
     <div class="container">
         <article class="snippet">{{ content }}</article>
+        {% if page.tags.size != 0 %}
+        <div class="tags">
+            <div class="tags__title">TAGS</div>
+            <ul class="tags__list">
+                {% for tag in page.tags %}
+                <li>
+                    <span>#</span>
+                    <a data-tag="{{ tag }}">{{ tag }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
     </div>
 </section>
-{% comment %}<div class="scroll-icon"></div>{% endcomment %}

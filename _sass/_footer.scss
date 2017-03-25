@@ -1,0 +1,44 @@
+.footer {
+}
+
+.footer__home {
+  border-color: transparent $lightWhite transparent transparent;
+  border-style: solid;
+  border-width: 12.5px 21.7px 12.5px 0;
+  bottom: 2rem;
+  cursor: pointer;
+  height: 0;
+  left: 2rem;
+  position: fixed;
+  transform: rotate(360deg);
+  transition: all .25s;
+  width: 0;
+  z-index: 4;
+  &:hover {
+    border-color: transparent $blue transparent transparent;
+  }
+  &:active {
+    border-color: transparent yellow transparent transparent;
+  }
+}
+
+.footer__scroll {
+  border-color: transparent transparent $lightWhite transparent;
+  border-style: solid;
+  border-width: 0 12.5px 21.7px 12.5px;
+  bottom: 2rem;
+  cursor: pointer;
+  height: 0;
+  position: fixed;
+  right: 2rem;
+  transform: rotate(360deg);
+  transition: all .25s;
+  width: 0;
+  z-index: 4;
+  &:hover {
+    border-color: transparent transparent $blue transparent;
+  }
+  &:active {
+    border-color: transparent transparent yellow transparent;
+  }
+}

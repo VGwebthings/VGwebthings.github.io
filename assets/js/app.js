@@ -1,9 +1,36 @@
+var didScroll = false;
+var header = document.getElementById('header');
+var content = document.getElementById('content');
+
+function changeHeader() {
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    header.classList.toggle('header--scrolled', scrollTop >= (content.offsetTop - 50));
+}
+
+function openSearch() {
+    $('body').toggleClass('no-scroll');
+    $('.header__search-icon').toggleClass('is-showing');
+    $('.header__search').toggleClass('is-showing');
+    setTimeout(function () {
+        $('#search').focus();
+    }, 250);
+}
+
 var loadScripts = function () {
-    var footer = $('footer');
     $('body').css('opacity', '1');
-    $('.header__search-icon').on('click', function (event) {
-        event.preventDefault();
-        $('.header__search').toggleClass('is-showing');
+    $('.header__search-icon').on('click', function (e) {
+        openSearch();
+        e.preventDefault();
+    });
+    $(window).keydown(function (e) {
+        if ((e.metaKey || e.ctrlKey) && e.keyCode == 83) {
+            openSearch();
+            e.preventDefault();
+        }
+        if (e.keyCode == 27) {
+            openSearch();
+            e.preventDefault();
+        }
     });
     $('a[href*=\\#]').on('click', function (event) {
         event.preventDefault();
@@ -11,6 +38,16 @@ var loadScripts = function () {
             scrollTop: $(this.hash).offset().top
         }, 500);
     });
+    $(window).scroll(function () {
+        didScroll = true;
+    });
+    setInterval(function () {
+        if (didScroll) {
+            didScroll = false;
+            changeHeader();
+        }
+    }, 100);
+    changeHeader();
     //new Clipboard('.btn');
     // $('#search-query').lunr({
     //     indexUrl: '/search.json',
@@ -18,11 +55,11 @@ var loadScripts = function () {
     //     entries: '.entries',
     //     template: '#search-results-template'
     // });
-    var idx = lunr(function () {
-        this.field('category');
-        this.field('content');
-        this.field('id');
-        this.field('title', {boost: 10});
-    });
+    // var idx = lunr(function () {
+    //     this.field('category');
+    //     this.field('content');
+    //     this.field('id');
+    //     this.field('title', {boost: 10});
+    // });
 };
 window.addEventListener('load', loadScripts);

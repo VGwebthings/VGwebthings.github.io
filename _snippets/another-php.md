@@ -10,3 +10,4 @@ add_action('init', function () {
     }
 });
 ```
+<script src="https://gist.github.com/Mallinanga/ec160eb3608e846b317f.js"></script>

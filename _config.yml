@@ -1,10 +1,7 @@
 title: VG web things
 description: VG web things on GitHub.
-
-permalink: /:title/
 timezone: Europe/Athens
-sass:
-  style: compressed
+permalink: /:title/
 
 collections:
   snippets:
@@ -13,7 +10,7 @@ collections:
 defaults:
   - scope:
         path: ""
-        type: "pages"
+        type: "posts"
     values:
         layout: "default"
   - scope:
@@ -26,7 +23,20 @@ defaults:
         type: "snippets"
     values:
         layout: "snippet"
-        categories: []
+        tags: []
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
 
 prose:
   media: 'media'
@@ -39,5 +49,8 @@ gems:
   - jekyll-seo-tag
 
 exclude:
+  - _placeholders
   - Gemfile
   - Gemfile.lock
+  - node_modules
+  - package.json
