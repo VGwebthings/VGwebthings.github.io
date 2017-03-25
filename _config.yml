@@ -23,6 +23,7 @@ defaults:
         type: "snippets"
     values:
         layout: "snippet"
+        image: 'https://source.unsplash.com/daily'
         tags: []
 
 sass:
