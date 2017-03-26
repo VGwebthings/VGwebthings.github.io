@@ -1,58 +1,145 @@
 <?php
-header("HTTP/1.1 404 Not Found");
-header("Status: 404 Not Found");
-$blog  = get_bloginfo('name');
-$site  = get_bloginfo('url') . '/';
-$email = get_bloginfo('admin_email');
-if ( ! empty($_COOKIE["nkthemeswitch" . COOKIEHASH])) {
-    $theme = clean($_COOKIE["nkthemeswitch" . COOKIEHASH]);
-} else {
-    $theme_data = wp_get_theme();
-    $theme      = clean($theme_data->Name);
-}
-if (isset($_SERVER['HTTP_REFERER'])) {
-    $referer = clean($_SERVER['HTTP_REFERER']);
-} else {
-    $referer = "undefined";
-}
-if (isset($_SERVER['REQUEST_URI']) && isset($_SERVER["HTTP_HOST"])) {
-    $request = clean('http://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
-} else {
-    $request = "undefined";
-}
-if (isset($_SERVER['QUERY_STRING'])) {
-    $string = clean($_SERVER['QUERY_STRING']);
-} else {
-    $string = "undefined";
-}
-if (isset($_SERVER['REMOTE_ADDR'])) {
-    $address = clean($_SERVER['REMOTE_ADDR']);
-} else {
-    $address = "undefined";
-}
-if (isset($_SERVER['HTTP_USER_AGENT'])) {
-    $agent = clean($_SERVER['HTTP_USER_AGENT']);
-} else {
-    $agent = "undefined";
-}
-if (isset($_SERVER['REMOTE_IDENT'])) {
-    $remote = clean($_SERVER['REMOTE_IDENT']);
-} else {
-    $remote = "undefined";
-}
-$time = clean(date("F jS Y, h:ia", time()));
-function clean($string)
+
+////////////////////////////////////////
+//Will return the current date + time///
+////////////////////////////////////////
+
+////////////////////////////////////////
+////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//Perform a LOAD query on a database///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+function db_load_value($id, $columm, $table)
 {
-    $string = rtrim($string);
-    $string = ltrim($string);
-    $string = htmlentities($string, ENT_QUOTES);
-    $string = str_replace("\n", "<br>", $string);
-    if (get_magic_quotes_gpc()) {
-        $string = stripslashes($string);
-    }
+    include("settings.php");
+    $connection = mysql_connect($setting_db_host, $setting_db_username, $setting_db_password);
+    $dbSelect   = mysql_select_db($setting_db_name, $connection);
+    $query      = "SELECT * ";
+    $query .= "FROM " . $table;
+    $query .= " WHERE id=" . $id;
+    $queryResult = mysql_query($query, $connection);
+    $value       = mysql_fetch_array($queryResult);
+    mysql_close($connection);
 
-    return $string;
+    return $value["{$columm}"];
 }
 
-$message = "TIME: " . $time . "\n" . "*404: " . $request . "\n" . "SITE: " . $site . "\n" . "THEME: " . $theme . "\n" . "REFERRER: " . $referer . "\n" . "QUERY STRING: " . $string . "\n" . "REMOTE ADDRESS: " . $address . "\n" . "REMOTE IDENTITY: " . $remote . "\n" . "USER AGENT: " . $agent . "\n\n\n";
-mail($email, "404 Alert: " . $blog . " [" . $theme . "]", $message, "From: $email");
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//Perform a SAVE query on a database///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+function db_save_value($value, $columm, $table)
+{
+    include("settings.php");
+    $connection = mysql_connect($setting_db_host, $setting_db_username, $setting_db_password);
+    $dbSelect   = mysql_select_db($setting_db_name, $connection);
+    $query      = "INSERT INTO ";
+    $query .= "`" . $table . "` ";
+    $query .= "( `id` , `" . $columm . "` ) ";
+    $query .= "VALUES ( '', '" . $value . "');";
+    mysql_query($query, $connection);
+    mysql_close($connection);
+}
+
+function db_save_two_values($value1, $columm1, $value2, $columm2, $table)
+{
+    include("settings.php");
+    $connection = mysql_connect($setting_db_host, $setting_db_username, $setting_db_password);
+    $dbSelect   = mysql_select_db($setting_db_name, $connection);
+    $query      = "INSERT INTO ";
+    $query .= "`" . $table . "` ";
+    $query .= "( `id` , ";
+    $query .= "`" . $columm1 . "`";
+    $query .= " , ";
+    $query .= "`" . $columm2 . "`";
+    $query .= ") ";
+    $query .= "VALUES ( '', ";
+    $query .= "'" . $value1 . "'";
+    $query .= " , ";
+    $query .= "'" . $value2 . "'";
+    $query .= ");";
+    mysql_query($query, $connection);
+    mysql_close($connection);
+}
+
+function db_save_three_values($value1, $columm1, $value2, $columm2, $value3, $columm3, $table)
+{
+    include("settings.php");
+    $connection = mysql_connect($setting_db_host, $setting_db_username, $setting_db_password);
+    $dbSelect   = mysql_select_db($setting_db_name, $connection);
+    $query      = "INSERT INTO ";
+    $query .= "`" . $table . "` ";
+    $query .= "( `id` , ";
+    $query .= "`" . $columm1 . "`";
+    $query .= " , ";
+    $query .= "`" . $columm2 . "`";
+    $query .= " , ";
+    $query .= "`" . $columm3 . "`";
+    $query .= ") ";
+    $query .= "VALUES ( '', ";
+    $query .= "'" . $value1 . "'";
+    $query .= " , ";
+    $query .= "'" . $value2 . "'";
+    $query .= " , ";
+    $query .= "'" . $value3 . "'";
+    $query .= ");";
+    mysql_query($query, $connection);
+    mysql_close($connection);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//Perform a DELETE query on a database///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+function db_delete_entry($id, $table)
+{
+    include("settings.php");
+    $connection = mysql_connect($setting_db_host, $setting_db_username, $setting_db_password);
+    $dbSelect   = mysql_select_db($setting_db_name, $connection);
+    $query      = "DELETE FROM " . $table . " WHERE id= '" . $id . "'";
+    mysql_query($query, $connection);
+    mysql_close($connection);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//Perform an UPDATE query on a database////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+function db_update_value($id, $value, $columm, $table)
+{
+    include("settings.php");
+    $connection = mysql_connect($setting_db_host, $setting_db_username, $setting_db_password);
+    $dbSelect   = mysql_select_db($setting_db_name, $connection);
+    $query      = "UPDATE  `" . $table . "` SET  `" . $columm . "` =  '" . $value . "' WHERE  `id` =" . $id;
+    mysql_query($query, $connection);
+    mysql_close($connection);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//Count all Rows in a table////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+function db_count_entries($table)
+{
+    include("settings.php");
+    $connection = mysql_connect($setting_db_host, $setting_db_username, $setting_db_password);
+    $dbSelect   = mysql_select_db($setting_db_name, $connection);
+    $query      = mysql_query("SELECT * FROM {$table}", $connection);
+    $result     = mysql_num_rows($query);
+
+    return $result;
+}
