@@ -7,7 +7,8 @@
   margin-bottom: 2em;
   padding: 2em;
   position: relative;
-  transition: all .25s;
+  transition: border .25s, box-shadow .25s;
+  will-change: border, box-shadow;
   &:hover {
     border: 1px solid $blue;
     box-shadow: 10px 10px 0 $blue;

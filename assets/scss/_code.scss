@@ -145,7 +145,8 @@ pre {
   color: $lightBlack;
   overflow: auto;
   padding: 3rem;
-  transition: all .25s;
+  transition: border .25s, box-shadow .25s;
+  will-change: border, box-shadow;
   &:hover {
     border: 1px solid $white;
     box-shadow: 10px 10px 0 $white;

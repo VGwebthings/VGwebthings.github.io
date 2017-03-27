@@ -50,8 +50,13 @@ gems:
   - jekyll-seo-tag
 
 exclude:
+  - .babelrc
   - _placeholders
+  - assets
   - Gemfile
   - Gemfile.lock
   - node_modules
   - package.json
+  - package.json
+  - src
+  - webpack.config.js

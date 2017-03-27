@@ -7,11 +7,13 @@ layout: compress
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     {% comment %}<title>{{ site.title }}</title>{% endcomment %}
+    {% comment %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision }}">
+    {% endcomment %}
     {% seo %}
     {% if jekyll.environment == "production" %}{% include analytics.html %}{% endif %}
 </head>
-<body class="layout-{{ page.layout }}">
+<body class="layout-{{ page.layout }}" style="opacity:0;">
 <div id="app">
     <header id="header" class="header">
         <div class="header__logo">
@@ -46,9 +48,6 @@ layout: compress
         <a href="#header" class="footer__scroll"></a>
     </footer>
 </div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.6/SmoothScroll.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/1.0.0/lunr.min.js"></script>
-<script src="/assets/js/app.js?v={{ site.github.build_revision }}"></script>
+<script src="/build/app.js?v={{ site.github.build_revision }}" async="async" defer="defer"></script>
 </body>
 </html>

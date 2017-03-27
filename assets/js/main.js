@@ -1,3 +1,8 @@
+require('../scss/app.scss');
+require('smoothscroll-for-websites');
+var $ = require('jquery');
+var lunr = require('lunr');
+require('./components/_search');
 var didScroll = false;
 var header = document.getElementById('header');
 var content = document.getElementById('content');

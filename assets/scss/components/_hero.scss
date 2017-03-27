@@ -4,6 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-bottom: 5px solid $blue;
   bottom: 0;
   color: $lightWhite;
   display: flex;
@@ -32,6 +33,7 @@
   }
   &.hero--error {
     background-color: $blue;
+    border-bottom: none;
     height: 100vh;
     &:before {
       content: none;

@@ -1,6 +1,9 @@
+.DS_Store
 .idea/
 .jekyll-metadata/
 .vscode/
 _placeholders/
 _site/
 node_modules/
+npm-debug.log
+yarn-error.log
